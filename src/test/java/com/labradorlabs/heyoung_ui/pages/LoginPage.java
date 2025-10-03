@@ -29,6 +29,9 @@ public class LoginPage extends BasePage {
     @FindBy(xpath = "//button[.='Sign in']")
     public WebElement signInBtn;
 
+    @FindBy (xpath = "//div[@class='error-msg']")
+    public WebElement errorMsg;
+
 
     public void acceptedCookies() {
         acceptedCookies.click();
