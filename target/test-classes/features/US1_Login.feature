@@ -1,11 +1,11 @@
 @US1
-  Feature: As a user, I should be able to log in.
+Feature: User login
 
-  Scenario: Verify login with credentials
+  @login_positive
+  Scenario: Successful login with valid credentials
     Given user is on the login page
-    When user enters valid env
-    And user enters valid username and valid password
+    When user enters organization url
+    And user enters a valid username and a valid password
     And user clicks the login button
-    Then verify the dashboard is displayed
-
+    Then user should see the dashboard
 

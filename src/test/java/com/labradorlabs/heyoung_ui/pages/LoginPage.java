@@ -30,7 +30,7 @@ public class LoginPage extends BasePage {
     public WebElement signInBtn;
 
     @FindBy (xpath = "//div[@class='error-msg']")
-    public WebElement errorMsg;
+    public WebElement loginErrorMessage;
 
 
     public void acceptedCookies() {

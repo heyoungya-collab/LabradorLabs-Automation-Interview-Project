@@ -19,15 +19,13 @@ public class US1_Login_StepDefs {
     @Given("user is on the login page")
     public void user_is_on_the_login_page() {
         loginPage.navigateToLoginPage();
-
         loginPage.acceptedCookies();
         BrowserUtils.sleep(2);
 
     }
 
-    @When("the user enters organization url")
+    @When("user enters organization url")
     public void user_enters_valid_url() {
-
         loginPage.urlInput.sendKeys(ConfigurationReader.getProperty("env1"));
         BrowserUtils.sleep(2);
     }
@@ -35,28 +33,23 @@ public class US1_Login_StepDefs {
     @When("user enters a valid username and a valid password")
     public void user_enters_valid_username_and_valid_password() {
         loginPage.userEmailInput.sendKeys(ConfigurationReader.getProperty("userName"));
+        loginPage.passwordInput.sendKeys(ConfigurationReader.getProperty("password"));
         BrowserUtils.sleep(2);
     }
 
     @When("user clicks the login button")
     public void user_clicks_the_login_button() {
-        loginPage.passwordInput.sendKeys(ConfigurationReader.getProperty("password"));
+        loginPage.signInBtn.click();
         BrowserUtils.sleep(2);
     }
 
 
     @Then("user should see the dashboard")
     public void verify_the_dashboard_is_displayed() {
-
-        String expected = "Labrador";
-
-        Assert.assertEquals(expected, Driver.getDriver().getTitle());
+        String expectedTitle = "Labrador";
+        Assert.assertEquals(expectedTitle, Driver.getDriver().getTitle());
 
 
     }
 
 }
-
-/*
-
-*/
