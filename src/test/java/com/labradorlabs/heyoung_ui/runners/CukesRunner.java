@@ -14,8 +14,8 @@ import org.junit.runner.RunWith;
         },
         features = "src/test/resources/features",
         glue = "com/labradorlabs/heyoung_ui/steps_definitions",
-        dryRun = true,
-        tags = "",
+        dryRun = false,
+        tags = "@empty_password",
         publish = true
 
 )

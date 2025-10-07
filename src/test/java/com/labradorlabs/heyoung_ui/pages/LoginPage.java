@@ -38,6 +38,12 @@ public class LoginPage extends BasePage {
     @FindBy (xpath = "//div[@class='error-msg']")
     public WebElement loginPasswordErrorMessage;
 
+    @FindBy (xpath = "//div[text()='Please enter your ID.']")
+    public WebElement loginEmailEmptyErrorMessage;
+
+    @FindBy (xpath = "//div[text()='Please enter your password.']")
+    public WebElement loginPasswordEmptyErrorMessage;
+
 
 
 

@@ -37,6 +37,19 @@ public class LoginPasswordValidationSteps {
         String actualMessage = loginPage.loginPasswordErrorMessage.getText();
         Assert.assertEquals("Error message does not match!", expectedMessage, actualMessage);
     }
+
+
+    //=======================================================================================================//
+
+
+
+
+    @Then("verify a password empty Error Message {string} is displayed")
+    public void verify_a_password_empty_error_message_is_displayed(String expectedMessage) {
+        String actualMessage = loginPage.loginPasswordEmptyErrorMessage.getText();
+        Assert.assertEquals("Error message does not match!", expectedMessage, actualMessage);
+    }
+
 }
 
 
