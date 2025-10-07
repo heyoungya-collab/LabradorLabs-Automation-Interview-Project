@@ -32,6 +32,14 @@ public class LoginPage extends BasePage {
     @FindBy (xpath = "//div[@class='error-msg']")
     public WebElement loginErrorMessage;
 
+    @FindBy (xpath = "(//div[@class='error-msg'])[1]")
+    public WebElement loginEmailErrorMessage;
+
+    @FindBy (xpath = "//div[@class='error-msg']")
+    public WebElement loginPasswordErrorMessage;
+
+
+
 
     public void acceptedCookies() {
         acceptedCookies.click();

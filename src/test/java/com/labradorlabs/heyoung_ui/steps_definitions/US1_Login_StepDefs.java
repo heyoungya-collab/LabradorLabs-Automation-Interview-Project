@@ -30,9 +30,9 @@ public class US1_Login_StepDefs {
         BrowserUtils.sleep(2);
     }
 
-    @When("user enters a valid username and a valid password")
-    public void user_enters_valid_username_and_valid_password() {
-        loginPage.userEmailInput.sendKeys(ConfigurationReader.getProperty("userName"));
+    @When("user enters a valid email and a valid password")
+    public void user_enters_valid_email_and_valid_password() {
+        loginPage.userEmailInput.sendKeys(ConfigurationReader.getProperty("email"));
         loginPage.passwordInput.sendKeys(ConfigurationReader.getProperty("password"));
         BrowserUtils.sleep(2);
     }
