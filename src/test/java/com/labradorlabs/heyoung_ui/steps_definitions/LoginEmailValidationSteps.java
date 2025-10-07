@@ -51,17 +51,3 @@ public class LoginEmailValidationSteps {
         Assert.assertEquals("Error message does not match!", expectedMessage, actualMessage);
     }
 }
-
-
-/*
-bug: found a bug on ID email format
-
-1. there is no specific guideline for ID format on error MSG (just shows "Not the correct email format.")
-2. PW already sets to guide how to type or create but ID doesn't show the specific guideline like PW.
-3. empty -> error MSG are different from regular error for Email ID
-ACCEPT -> user_nodot@domain    /  user@domaincom   == accept only - dash and _ underscore instead of . dot
-also accept without .
-Email id format should clear direction
-
-
- */
