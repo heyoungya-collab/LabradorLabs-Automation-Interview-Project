@@ -6,7 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class LoginPage extends BasePage {
+public class LoginPage {
 
     public LoginPage() {
 
@@ -29,22 +29,20 @@ public class LoginPage extends BasePage {
     @FindBy(xpath = "//button[.='Sign in']")
     public WebElement signInBtn;
 
-    @FindBy (xpath = "//div[@class='error-msg']")
+    @FindBy(xpath = "//div[@class='error-msg']")
     public WebElement loginErrorMessage;
 
-    @FindBy (xpath = "(//div[@class='error-msg'])[1]")
+    @FindBy(xpath = "(//div[@class='error-msg'])[1]")
     public WebElement loginEmailErrorMessage;
 
-    @FindBy (xpath = "//div[@class='error-msg']")
+    @FindBy(xpath = "//div[@class='error-msg']")
     public WebElement loginPasswordErrorMessage;
 
-    @FindBy (xpath = "//div[text()='Please enter your ID.']")
+    @FindBy(xpath = "//div[text()='Please enter your ID.']")
     public WebElement loginEmailEmptyErrorMessage;
 
-    @FindBy (xpath = "//div[text()='Please enter your password.']")
+    @FindBy(xpath = "//div[text()='Please enter your password.']")
     public WebElement loginPasswordEmptyErrorMessage;
-
-
 
 
     public void acceptedCookies() {

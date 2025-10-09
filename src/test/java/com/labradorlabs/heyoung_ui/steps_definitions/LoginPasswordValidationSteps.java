@@ -16,7 +16,7 @@ public class LoginPasswordValidationSteps {
 
     @When("user enters a valid email")
     public void user_enters_a_valid_email() {
-        loginPage.userEmailInput.sendKeys(ConfigurationReader.getProperty("email"));
+        loginPage.userEmailInput.sendKeys("user@doubleat.com");
         BrowserUtils.sleep(2);
     }
 
@@ -38,17 +38,6 @@ public class LoginPasswordValidationSteps {
         Assert.assertEquals("Error message does not match!", expectedMessage, actualMessage);
     }
 
-
-    //=======================================================================================================//
-
-
-
-
-    @Then("verify a password empty Error Message {string} is displayed")
-    public void verify_a_password_empty_error_message_is_displayed(String expectedMessage) {
-        String actualMessage = loginPage.loginPasswordEmptyErrorMessage.getText();
-        Assert.assertEquals("Error message does not match!", expectedMessage, actualMessage);
-    }
 
 }
 

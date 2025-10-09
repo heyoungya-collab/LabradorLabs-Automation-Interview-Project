@@ -7,12 +7,14 @@
 
 1. 잘못된 자격 증명(invalid credential) 로그인
 
-2. 이메일 ID 오류 / 비밀번호 오류
+2. 이메일 ID 오류
 
-3. 미입력
+3. 비밀번호 오류
+
+4. 미입력
 
 * 실행 방법
-테스트 자동화 스크립트는 Selenium과 JUnit 기반으로 작성되었으며, IDE에서 mvn test 명령어로 실행 가능합니다.
+테스트 자동화 스크립트는 Selenium JUnit 기반으로 작성되었으며, IDE mvn test 명령어로 실행 가능합니다.
 
 
 *발견 이슈
@@ -27,7 +29,7 @@ RFC 5322에 따르면, 로컬 파트에는 문자와 숫자, 그리고 다음의
 이러한 불명확성은 사용자 혼란과 입력 일관성 저하를 초래할 수 있습니다.
 
 기대사항:
-로컬 파트와 도메인 파트의 허용 문자와 형식 규칙을 명확하게 정의할 것
+이메일 ID 파트와 도메인 파트의 허용 문자와 형식 규칙을 명확하게 정의할 것
 
 도메인 부분에는 최소 한 개 이상의 점(.) 포함을 필수로 안내하거나 강제할 것
 
@@ -38,11 +40,12 @@ RFC 5322에 따르면, 로컬 파트에는 문자와 숫자, 그리고 다음의
 *** Negative Test Scenarios for Login Credentials ***
 
 email:
-1. invalid domain but format has @ and .
-2. invalid email (double @), valid password format
-3. missing '.' in domain (invalid format)
-4. double dot in domain (invalid format)
-5. empty email, valid password
+1. Double @ not allowed
+2. Double dot . not allowed 
+3. Space in local part and domain missing do
+4. Local part(email ID) starts with dot, which isn’t allowed. 
+5. Local part ends with dot, which isn’t allowed.
+6. empty email
    
 password:
 1. too short
@@ -51,11 +54,9 @@ password:
 4. no special characters
 5. no numbers
 6. contains whitespace
+7. empty password
 
 
 
 
 
-다음 단계
-다음 테스트에서는 유효한 자격 증명(valid credential)으로 각 프로그램 모듈에 대한 접근 권한이 정상적으로 부여되는지를 확인할 예정입니다.
-이를 통해 사용자가 권한 없는 모듈에 접근하지 못하고, 필요한 권한이 있을 시 정상적으로 접근이 가능한지를 검증할 계획입니다.
